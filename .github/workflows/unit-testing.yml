@@ -22,4 +22,12 @@ jobs:
         run: npm install
 
       - name: Unit Testing
-        run: npm run lint
+        run: npm run lint:junit
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eslint-report 
+          path: ./eslint-report.xml
+        
+        
