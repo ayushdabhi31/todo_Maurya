@@ -2,8 +2,9 @@ name: Unit testing
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   unit-testing:  
@@ -16,7 +17,8 @@ jobs:
       - name: Setup NodeJS Version
         uses: actions/setup-node@v4
         with:
-            node-version: 20
+            node-version: 24
+            #nodejs 20 verstion out dated
 
       - name: Install Dependencies
         run: npm install
